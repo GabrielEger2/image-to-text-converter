@@ -3,12 +3,16 @@ import numpy as np
 import pytesseract as tess
 import re
 
-tess.pytesseract.tesseract_cmd = r'C:\TESSERACT LOCATION\tesseract.exe'
+tess.pytesseract.tesseract_cmd = r'C:\PYTESSERACT LOCATION.exe'
 
+
+# Load Requirements
+with open('requirements.txt') as f:
+    requirements = f.readlines()
 
 #importing and resizing the image, need to set a universal resize method for different papers sheet in the future
 
-image = cv.imread("IMAGE NAME.jpg")
+image = cv.imread("image.jpg")
 w, h = image.shape[1], image.shape[0]
 image = cv.resize(image, (827, 1170))
 image_warp = image.copy()
